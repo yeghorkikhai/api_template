@@ -1,0 +1,19 @@
+# Questions
+project_name:
+  type: str
+  help: Your project name
+
+project_description:
+  type: str
+  help: Your project description
+
+# Settings
+_min_copier_version: "6.1.0"
+_subdirectory: project
+_templates_suffix: .jinja
+_skip_if_exists:
+  - CHANGELOG.md
+_tasks:
+  - python3.11 -m venv venv
+  - venv/bin/pip install -U pip setuptools
+  - venv/bin/pip install poetry
